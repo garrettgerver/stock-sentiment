@@ -1,7 +1,7 @@
 # Stock Sentiment Script in Python
-This is a simple python script that uses a pretrained LLM model [FinancialBERT-Sentiment-Analysis](https://huggingface.co/ahmedrachid/FinancialBERT-Sentiment-Analysis) to calculate the general sentiment of a given stock per the most recent Yahoo Finance articles about said stock.
+This is a simple python script that uses a pretrained LLM model [FinancialBERT-Sentiment-Analysis](https://huggingface.co/ahmedrachid/FinancialBERT-Sentiment-Analysis) to calculate the general sentiment of a list of given stocks per the most recent Yahoo Finance articles about said stocks.
 
-The current way to run this script as per `python stock-sentiment -h`:
+The current way to run this script, as per `python stock-sentiment -h`:
 ```
 usage: stock-sentiment.py [-h] [-s {Yahoo}] [-f FILE] ticker [ticker ...]
 

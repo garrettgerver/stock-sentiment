@@ -38,11 +38,11 @@ class ModelObject():
         self._container.update({ticker: self._elements})
         self._elements = {}
 
-def model(tickers: list[str]) -> ModelObject: 
+def model(tickers: list[str], source: str) -> ModelObject: 
     data = ModelObject()
     for ticker in tickers:
         visited_links = []
-        match (args.source):
+        match (source):
             case "Yahoo": rss_url = f"https://feeds.finance.yahoo.com/rss/2.0/headline?s={ticker}"
             case _: break #will be used in future for incorporating more websites
         try:
@@ -107,7 +107,7 @@ if __name__ == "__main__":
             raise AssertionError("Invalid file format (.txt, .json)")
 
     tickers = [x.upper() for x in args.ticker] 
-    data = model(tickers)
+    data = model(tickers, args.source)
     if args.file:
         with open(args.file, "w") as f:
             json.dump(data, f, indent=4)
